@@ -307,5 +307,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2179791700776696871, guid: 10fea2acb89c5804e892f1cd2f8992fe, type: 3}
+      propertyPath: ShootDirection.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179791700776696871, guid: 10fea2acb89c5804e892f1cd2f8992fe, type: 3}
+      propertyPath: ShootSpped
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179791700776696871, guid: 10fea2acb89c5804e892f1cd2f8992fe, type: 3}
+      propertyPath: CreationRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179791700776696871, guid: 10fea2acb89c5804e892f1cd2f8992fe, type: 3}
+      propertyPath: ShootSpeed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10fea2acb89c5804e892f1cd2f8992fe, type: 3}
