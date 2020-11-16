@@ -6,6 +6,7 @@ public class Shoot : MonoBehaviour
 {
     public Vector2 ShootDirection;
     public float CreationRate;
+    public int damage;
 
     [Range(1, 100)]
     public float ShootSpeed = 10;
@@ -27,6 +28,7 @@ public class Shoot : MonoBehaviour
             if (bullet != null && Time.time > time)
             {
                 bullet.transform.position = this.transform.position;
+                bullet.tag = "Player Bullet";
                 
                 bullet.GetComponent<Bullet>().SetBulletStats(ShootDirection, ShootSpeed);
                 bullet.SetActive(true);                            
