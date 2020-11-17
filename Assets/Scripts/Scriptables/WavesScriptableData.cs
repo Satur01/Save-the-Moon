@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Waves", menuName = "ScriptableObjects/Wave")]
 public class WavesScriptableData : ScriptableObject
 {
-    public int waveCount, timeBetweenWaves;
-    public float spawnRate;
+    [Header("Wave General Settings")]
+    public float timeBetweenWaves;
 
-    public Wave.WaveType[] typeOfWave;
-    public List<EnemyScriptableData> enemiesData;
+    [Header("Wave's Enemies Settings")]
+    public Wave[] waves;
 }

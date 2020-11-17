@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour, IDamageable<int>, IKillable
     void Update()
     {
         float x = 2f * Mathf.Sin(Time.time * 1f);
-        transform.localPosition = new Vector2(x, transform.position.y);
+        transform.position = new Vector2(x, transform.position.y);
     }
 
     void FixedUpdate()

@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8608387470250329628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -136,7 +136,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.08599162}
@@ -166,5 +166,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemeyStats: {fileID: 11400000, guid: 240bcfdb68b4bf1418267bd8a986160d, type: 2}
   Speed: 0
-  Damage: 0
+  EnemyDamage: 0
+  Life: 0
   ShootRate: 0

@@ -5,15 +5,13 @@ public class WaveController : MonoBehaviour
 {
     public WavesScriptableData WaveStats;
 
-    int waveCount;
-    float spawnRate, timeBetweenWaves;
+    float timeBetweenWaves;
     bool startNextWave;
 
     void Start()
     {
-        waveCount = WaveStats.waveCount;
-        spawnRate = WaveStats.spawnRate;
         timeBetweenWaves = WaveStats.timeBetweenWaves;
+        startNextWave = true;
     }
 
     void Update()
@@ -27,21 +25,17 @@ public class WaveController : MonoBehaviour
     IEnumerator waveSpawner()
     {
         startNextWave = false;
+        // GameObject enemyClone;
 
-        // for (int i = 0; i < enemyCount; i++)
-        // {
-        //     GameObject enemyClone = Instantiate(enemy);
+        for (int i = 0; i < WaveStats.waves[0].enemies.Length; i++)
+        {
+            Instantiate(WaveStats.waves[0].enemies[i], new Vector2(0,6f), transform.rotation);
+            yield return new WaitForSeconds(WaveStats.waves[0].spawnRate);
+        }
 
-        //     yield return new WaitForSeconds(spawnRate);
-        // }
+        yield return new WaitForSeconds(timeBetweenWaves);
 
-        // spawnRate -= 0.1f;
-        // enemyCount += 3;
-        // waveCount += 1;
-
-        // yield return new WaitForSeconds(timeBetweenWaves);
-
-        // waveIsDone = true;
+        startNextWave = true;
 
         yield return null;
     }
