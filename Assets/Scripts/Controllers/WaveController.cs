@@ -1,21 +1,19 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class WaveSpawner : MonoBehaviour
+public class WaveController : MonoBehaviour
 {
     public WavesScriptableData WaveStats;
 
-    public int WaveCount;
-
-    public float SpawnRate, TimeBetweenWaves;
-
+    int waveCount;
+    float spawnRate, timeBetweenWaves;
     bool startNextWave;
 
     void Start()
     {
-        WaveCount = WaveStats.waveCount;
-        SpawnRate = WaveStats.spawnRate;
-        TimeBetweenWaves = WaveStats.timeBetweenWaves;
+        waveCount = WaveStats.waveCount;
+        spawnRate = WaveStats.spawnRate;
+        timeBetweenWaves = WaveStats.timeBetweenWaves;
     }
 
     void Update()
