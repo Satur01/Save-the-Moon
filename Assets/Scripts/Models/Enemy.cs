@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable<int>, IKillable
 {
     Rigidbody2D rgb2D;
 
     public EnemyScriptableData EnemeyStats;
-    public int Speed, Damage, Life;
+    public int Speed, EnemyDamage, Life;
     public float ShootRate;
 
     // Start is called before the first frame update
     void Start()
     {
         Speed = EnemeyStats.movementSpeed;
-        Damage = EnemeyStats.damage;
+        EnemyDamage = EnemeyStats.damage;
         ShootRate = EnemeyStats.shootRate;
         Life = EnemeyStats.life;
 
@@ -35,19 +35,30 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag.Equals("Player Bullet"))
+        if (other.tag.Equals("Player Laser"))
         {
-            Shoot shooterInstance = other.GetComponent<Shoot>();
+            Shoot shooterInstance = other.transform.parent.GetComponent<Shoot>();
 
             if (shooterInstance.damage - Life <= 0)
             {
-                //Destroy Object
+                Kill();
             }
             else
             {
-                Life = Life - shooterInstance.damage;
-                //Play damage animation
+                Damage(shooterInstance.damage);
             }
         }
+    }
+
+    public void Damage(int damageTaken)
+    {
+        Life = Life - damageTaken;
+        //Play Damage animation
+    }
+
+    public void Kill()
+    {
+        //Explosion animation
+        Destroy(this.gameObject);
     }
 }

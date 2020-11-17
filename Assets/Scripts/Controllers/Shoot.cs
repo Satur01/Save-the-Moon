@@ -28,7 +28,7 @@ public class Shoot : MonoBehaviour
             if (bullet != null && Time.time > time)
             {
                 bullet.transform.position = this.transform.position;
-                bullet.tag = "Player Bullet";
+                bullet.tag = "Player Laser";
                 
                 bullet.GetComponent<Bullet>().SetBulletStats(ShootDirection, ShootSpeed);
                 bullet.SetActive(true);                            

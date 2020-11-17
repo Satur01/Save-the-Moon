@@ -9,10 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb9257f8f27be7a4c970ba7362f59049, type: 3}
-  m_Name: PL-23
+  m_Script: {fileID: 11500000, guid: fb7b8b9566ced724b857793d16169515, type: 3}
+  m_Name: Waves
   m_EditorClassIdentifier: 
-  life: 5
-  damage: 2
-  movementSpeed: 2
-  shootRate: 0
+  waveCount: 0
+  timeBetweenWaves: 0
+  spawnRate: 0
+  typeOfWave: 0000000000000000
+  enemiesData:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
