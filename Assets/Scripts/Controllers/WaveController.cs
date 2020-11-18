@@ -30,18 +30,32 @@ public class WaveController : MonoBehaviour
         {
             float offset = 0;
 
-            for(int i = 0; i < wave.enemies.Length; i++)
+            for (int i = 0; i < wave.enemies.Length; i++)
             {
-                GameObject tmp = Instantiate(wave.enemies[i], transform.position, transform.rotation);
-                tmp.transform.SetParent(this.transform);
-                offset += i > 0 ? wave.offsetBetweenEnemies + wave.offsetMultiplier : wave.offsetBetweenEnemies;
-                tmp.GetComponent<Enemy>().offset = offset;
-                yield return new WaitForSeconds(WaveStats.waves[0].spawnRate);
-            }   
+                GameObject tmp = InstantiateEnemy(wave, ref offset, i);
+                EnemySetup(wave, offset, tmp);
 
-            yield return new WaitForSeconds(timeBetweenWaves);       
-        }       
+                yield return new WaitForSeconds(wave.spawnRate);
+            }
+
+            yield return new WaitForSeconds(timeBetweenWaves);
+        }
 
         yield return null;
+    }
+
+    private static void EnemySetup(Wave wave, float offset, GameObject tmp)
+    {
+        Enemy enemyRef = tmp.GetComponent<Enemy>();
+        enemyRef.offset = offset;
+        enemyRef.typeOfWave = wave.typeOfWave;
+    }
+
+    private GameObject InstantiateEnemy(Wave wave, ref float offset, int i)
+    {
+        GameObject tmp = Instantiate(wave.enemies[i], transform.position, transform.rotation);
+        tmp.transform.SetParent(this.transform);
+        offset += i > 0 ? wave.offsetBetweenEnemies + wave.offsetMultiplier : wave.offsetBetweenEnemies;
+        return tmp;
     }
 }
