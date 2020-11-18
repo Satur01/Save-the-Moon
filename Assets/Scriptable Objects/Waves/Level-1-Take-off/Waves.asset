@@ -15,7 +15,7 @@ MonoBehaviour:
   timeBetweenWaves: 1
   waves:
   - typeOfWave: 0
-    spawnRate: 2
+    spawnRate: 1
     enemies:
     - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
     - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}

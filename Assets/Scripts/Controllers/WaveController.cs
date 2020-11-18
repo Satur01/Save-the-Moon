@@ -25,11 +25,19 @@ public class WaveController : MonoBehaviour
     IEnumerator waveSpawner()
     {
         startNextWave = false;
-        // GameObject enemyClone;
+
+        float offset = 0;
 
         for (int i = 0; i < WaveStats.waves[0].enemies.Length; i++)
         {
-            Instantiate(WaveStats.waves[0].enemies[i], new Vector2(0,6f), transform.rotation);
+            GameObject tmp = Instantiate(WaveStats.waves[0].enemies[i], transform.position, transform.rotation);
+
+            tmp.transform.SetParent(this.transform);
+
+            offset += i > 0 ? WaveStats.waves[0].offsetBetweenEnemies + WaveStats.waves[0].offsetMultiplier : WaveStats.waves[0].offsetBetweenEnemies;
+
+            tmp.GetComponent<Enemy>().offset = offset;
+
             yield return new WaitForSeconds(WaveStats.waves[0].spawnRate);
         }
 

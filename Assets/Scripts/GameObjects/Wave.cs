@@ -13,6 +13,6 @@ public class Wave
     }
 
     public WaveType typeOfWave;
-    public float spawnRate;
+    public float spawnRate, offsetBetweenEnemies, offsetMultiplier;
     public GameObject[] enemies;
 }

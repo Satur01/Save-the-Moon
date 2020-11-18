@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour, IDamageable<int>, IKillable
     public int Speed, EnemyDamage, Life;
     public float ShootRate;
 
+    public float offset { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,14 +19,13 @@ public class Enemy : MonoBehaviour, IDamageable<int>, IKillable
         EnemyDamage = EnemeyStats.damage;
         ShootRate = EnemeyStats.shootRate;
         Life = EnemeyStats.life;
-
         rgb2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float x = 2f * Mathf.Sin(Time.time * 1f);
+        float x = 2f * Mathf.Sin(Time.time * 1f + offset);
         transform.position = new Vector2(x, transform.position.y);
     }
 
