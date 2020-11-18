@@ -30,9 +30,9 @@ public class WaveController : MonoBehaviour
         {
             float offset = 0;
 
-            for (int i = 0; i < wave.enemies.Length; i++)
+            for (int waveIndex = 0; waveIndex < wave.enemies.Length; waveIndex++)
             {
-                GameObject tmp = InstantiateEnemy(wave, ref offset, i);
+                GameObject tmp = InstantiateEnemy(wave, ref offset, waveIndex);
                 EnemySetup(wave, offset, tmp);
 
                 yield return new WaitForSeconds(wave.spawnRate);
@@ -51,11 +51,11 @@ public class WaveController : MonoBehaviour
         enemyRef.typeOfWave = wave.typeOfWave;
     }
 
-    private GameObject InstantiateEnemy(Wave wave, ref float offset, int i)
+    private GameObject InstantiateEnemy(Wave wave, ref float offset, int waveIndex)
     {
-        GameObject tmp = Instantiate(wave.enemies[i], transform.position, transform.rotation);
+        GameObject tmp = Instantiate(wave.enemies[waveIndex], transform.position, transform.rotation);
         tmp.transform.SetParent(this.transform);
-        offset += i > 0 ? wave.offsetBetweenEnemies + wave.offsetMultiplier : wave.offsetBetweenEnemies;
+        offset += waveIndex > 0 ? wave.offsetBetweenEnemies + wave.offsetMultiplier : wave.offsetBetweenEnemies;
         return tmp;
     }
 }
