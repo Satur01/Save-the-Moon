@@ -32,4 +32,9 @@ public class Bullet : MonoBehaviour
         shootDirection = ShootDirection;
         shootSpeed = ShootSpeed;
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        this.gameObject.SetActive(false);
+    }
 }

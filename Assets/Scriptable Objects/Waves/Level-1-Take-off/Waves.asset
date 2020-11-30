@@ -12,24 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7b8b9566ced724b857793d16169515, type: 3}
   m_Name: Waves
   m_EditorClassIdentifier: 
-  timeBetweenWaves: 1
+  timeBetweenWaves: 15
   waves:
   - typeOfWave: 0
     spawnRate: 1
+    offsetBetweenEnemies: 0.5
+    offsetMultiplier: 2
     enemies:
-    - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
-    - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
-    - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
-    - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
-    - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
     - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
     - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
     - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
   - typeOfWave: 0
-    spawnRate: 2
+    spawnRate: 1
+    offsetBetweenEnemies: 0.5
+    offsetMultiplier: 2
     enemies:
-    - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
-    - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
     - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
     - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
     - {fileID: 8608387470250329628, guid: 1a93f26c41ff18c46bee825a33f3f141, type: 3}
