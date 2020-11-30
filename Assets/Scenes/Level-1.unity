@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 426594633}
   - component: {fileID: 426594632}
   m_Layer: 5
-  m_Name: ValorationText
+  m_Name: ComboText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,12 +298,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboBar: {fileID: 1849780848}
-  currentLevel: 0
+  levelText: {fileID: 426594632}
+  currentLevel: 4
   ComboStats: {fileID: 11400000, guid: a228df4fe242ccb4f9b41cf3d905f7a8, type: 2}
   streakEnemies: 0
   maxTime: 20
   timeLeft: 0
-  comboRunning: 0
+  comboRunning: 1
 --- !u!4 &501761595
 Transform:
   m_ObjectHideFlags: 0
