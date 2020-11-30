@@ -298,8 +298,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboBar: {fileID: 1849780848}
+  currentLevel: 0
+  ComboStats: {fileID: 11400000, guid: a228df4fe242ccb4f9b41cf3d905f7a8, type: 2}
+  streakEnemies: 0
   maxTime: 20
   timeLeft: 0
+  comboRunning: 0
 --- !u!4 &501761595
 Transform:
   m_ObjectHideFlags: 0

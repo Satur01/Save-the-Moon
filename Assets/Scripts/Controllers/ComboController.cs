@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ComboController : MonoBehaviour
 {
     public Image comboBar;
+    public Text levelText;
 
     public ComboLevels currentLevel;
     public ComboLevelsScriptable ComboStats;
@@ -21,9 +22,10 @@ public class ComboController : MonoBehaviour
     void Start()
     {
         timeLeft = ComboStats.levelSettings[0].timeLimit;
+        currentLevel = ComboStats.levelSettings[0].level;
         maxTime = timeLeft;
-        currentLevel = ComboLevels.D;
         comboRunning = false;
+        levelText.text = currentLevel.ToString();
     }
 
     // Update is called once per frame
@@ -55,6 +57,7 @@ public class ComboController : MonoBehaviour
         currentLevel -= 1;
         int index = (int)currentLevel;
         maxTime = ComboStats.levelSettings[index].timeLimit;
+        levelText.text = currentLevel.ToString();
         timeLeft = maxTime;
     }
 

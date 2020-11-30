@@ -15,11 +15,16 @@ MonoBehaviour:
   levelSettings:
   - level: 0
     timeLimit: 30
+    comboMultiplier: 1
   - level: 1
     timeLimit: 25
+    comboMultiplier: 1.2
   - level: 2
     timeLimit: 20
+    comboMultiplier: 1.5
   - level: 3
     timeLimit: 15
-  - level: 0
+    comboMultiplier: 2
+  - level: 4
     timeLimit: 10
+    comboMultiplier: 3
